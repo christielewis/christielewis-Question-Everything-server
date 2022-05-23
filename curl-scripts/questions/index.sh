@@ -2,7 +2,7 @@
 
 # sh curl-scripts/questions/index.sh 
 
-TOKEN="9aeff33077cdc6836aac97492393e5d5"
+TOKEN="f9e6f743e942a0c1b09f3c79f70c6784"
 API="http://localhost:4741"
 URL_PATH="/questions"
 

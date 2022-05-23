@@ -76,11 +76,11 @@ router.patch('/questions/:id', requireToken, removeBlanks, (req, res, next) => {
 // DESTROY
 // DELETE /Questions/5a7db6c74d55bc51bdf39793
 router.delete('/questions/:id', requireToken, (req, res, next) => {
-  Example.findById(req.params.id)
+  Question.findById(req.params.id)
     .then(handle404)
-    .then(example => {
-      requireOwnership(req, example)
-      example.deleteOne()
+    .then(question => {
+      requireOwnership(req, question)
+      question.deleteOne()
     })
     .then(() => res.sendStatus(204))
     .catch(next)

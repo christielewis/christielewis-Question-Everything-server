@@ -2,8 +2,8 @@
 
 # sh curl-scripts/auth/sign-in.sh  
 
-EMAIL="c@c.com"
-PASSWORD="c"
+EMAIL="cc@c.com"
+PASSWORD="cc"
 
 API="http://localhost:4741"
 URL_PATH="/sign-in"
