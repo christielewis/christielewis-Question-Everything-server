@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# sh curl-scripts/auth/sign-up.sh  
+
+EMAIL="c@c.com"
+PASSWORD="c"
 API="http://localhost:4741"
 URL_PATH="/sign-up"
 

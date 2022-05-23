@@ -2,7 +2,11 @@ const mongoose = require('mongoose')
 const answerSchema = require('./answer')
 
 const questionSchema = new mongoose.Schema({
-  question: {
+  title: {
+    type: String,
+    required: true
+  },
+  topic: {
     type: String,
     required: true
   },
@@ -27,6 +31,7 @@ const questionSchema = new mongoose.Schema({
 }, {
   timestamps: true,
   toObject: {
+    // remove `hashedPassword` field when we call `.toObject`
     transform: (_doc, user) => {
       delete user.hashedPassword
       return user

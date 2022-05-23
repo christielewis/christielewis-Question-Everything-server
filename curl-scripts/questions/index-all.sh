@@ -1,10 +1,10 @@
 #!/bin/sh
 
-# sh curl-scripts/questions/index.sh 
+# sh curl-scripts/questions/index-all.sh 
 
 TOKEN="9aeff33077cdc6836aac97492393e5d5"
 API="http://localhost:4741"
-URL_PATH="/questions"
+URL_PATH="/"
 
 curl "${API}${URL_PATH}" \
   --include \
