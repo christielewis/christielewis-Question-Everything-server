@@ -10,11 +10,12 @@ const handle404 = customErrors.handle404
 const requireOwnership = customErrors.requireOwnership
 
 const removeBlanks = require('../../lib/remove_blank_fields')
-// const question = require('../models/question')
 const requireToken = passport.authenticate('bearer', { session: false })
 
 const router = express.Router()
 
+// INDEX
+// GET /answers
 router.post('/answers', requireToken, (req, res, next) => {
   const answerData = req.body.answer
   const questionId = answerData.questionId
@@ -33,31 +34,37 @@ router.post('/answers', requireToken, (req, res, next) => {
 })
 
 // UPDATE
-// PATCH /questions/answers/5a7db6c74d55bc51bdf39793
+// PATCH /answers/5a7db6c74d55bc51bdf39793
 router.patch('/answers/:id', requireToken, removeBlanks, (req, res, next) => {
-  delete req.body.answer.owner
+  const answerId = req.params.answerId
+  const answerData = req.body.answer
+  const questionId = answerData.questionId
 
-  Answer.findById(req.params.id)
+  Question.findById(questionId)
     .then(handle404)
-    .then(answer => {
-      requireOwnership(req, answer)
-
-      return answer.updateOne(req.body.answer)
+    .then(question => {
+      const answer = question.answer.id(answerId)
+      answer.set(answerData)
+      return question.save()
     })
     .then(() => res.sendStatus(204))
     .catch(next)
 })
 
 // DESTROY
-// DELETE /questions/answers/5a7db6c74d55bc51bdf39793
-router.delete('answers/:id', requireToken, (req, res, next) => {
-  Answer.findById(req.params.id)
+// DELETE /answers/5a7db6c74d55bc51bdf39793
+router.delete('/answers/:id', requireToken, (req, res, next) => {
+  const answerId = req.params.answerId
+  const answerData = req.body.answer
+  const questionId = answerData.questionId
+
+  Question.findById(questionId)
     .then(handle404)
-    .then(answer => {
-      requireOwnership(req, answer)
-      answer.deleteOne()
+    .then(question => {
+      question.answer.id(answerId).remove()
+      return question.save()
     })
-    .then(() => res.sendStatus(204))
+    .then(() => removeBlanks.sendStatus(204))
     .catch(next)
 })
 
