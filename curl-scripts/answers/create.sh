@@ -2,7 +2,8 @@
 
 # sh curl-scripts/answers/create.sh  
 
-TEXT="The G.O.A.T means The Greatest Of All Time!"
+# TEXT="The G.O.A.T means The Greatest Of All Time!"
+TEXT="Le G.O.A.T stands for Le Greatest Of All Time!"
 TOKEN="f9e6f743e942a0c1b09f3c79f70c6784"
 API="http://localhost:4741"
 URL_PATH="/answers"

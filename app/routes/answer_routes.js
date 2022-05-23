@@ -35,7 +35,7 @@ router.post('/answers', requireToken, (req, res, next) => {
 
 // UPDATE
 // PATCH /answers/5a7db6c74d55bc51bdf39793
-router.patch('/answers/:id', requireToken, removeBlanks, (req, res, next) => {
+router.patch('/answers/:answerId', requireToken, removeBlanks, (req, res, next) => {
   const answerId = req.params.answerId
   const answerData = req.body.answer
   const questionId = answerData.questionId
@@ -53,7 +53,7 @@ router.patch('/answers/:id', requireToken, removeBlanks, (req, res, next) => {
 
 // DESTROY
 // DELETE /answers/5a7db6c74d55bc51bdf39793
-router.delete('/answers/:id', requireToken, (req, res, next) => {
+router.delete('/answers/:answerId', requireToken, (req, res, next) => {
   const answerId = req.params.answerId
   const answerData = req.body.answer
   const questionId = answerData.questionId
@@ -64,7 +64,7 @@ router.delete('/answers/:id', requireToken, (req, res, next) => {
       question.answer.id(answerId).remove()
       return question.save()
     })
-    .then(() => removeBlanks.sendStatus(204))
+    .then(() => res.sendStatus(204))
     .catch(next)
 })
 
