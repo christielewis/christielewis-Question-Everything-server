@@ -16,7 +16,7 @@ const router = express.Router()
 
 // INDEX
 // GET ALL QUESTIONS /
-router.get('/', requireToken, (req, res, next) => {
+router.get('/all', requireToken, (req, res, next) => {
   Question.find()
     .then(questions => {
       return questions.map(questions => questions.toObject())
