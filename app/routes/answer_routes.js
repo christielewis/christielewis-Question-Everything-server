@@ -17,12 +17,12 @@ const router = express.Router()
 // CREATE
 // GET /answers
 router.post('/answers', requireToken, (req, res, next) => {
-  console.log(req.body)
+  // console.log(req.body)
   const answerData = req.body.answer
   const questionId = answerData.questionId
-  console.log('in router post/answers')
-  console.log(answerData)
-  console.log(questionId)
+  // console.log('in router post/answers')
+  // console.log(answerData)
+  // console.log(questionId)
   Question.findById(questionId)
     .then(handle404)
     .then(question => {
