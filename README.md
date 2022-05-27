@@ -113,7 +113,7 @@ I tackled bugs in a plethora of ways throughout in the development process. Some
 * Updating Answers to Questions
 * Deleting Answers to Questions
 
-#### Setup/Installation
+### Setup/Installation
 If you want a copy of this repository:
 1. Fork and clone it.
 1. Install dependencies with `npm install`.
