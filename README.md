@@ -105,7 +105,7 @@ I tackled bugs in a plethora of ways throughout in the development process. Some
   * CONSOLE.LOG()
 
 ## Entity-Relationship Diagram
-![ERD](https://media.git.generalassemb.ly/user/42033/files/184e1299-1740-4b6b-bc1a-478eed6aa023)
+![ERD](Proj3ERD.jpg)
 
 ### Unsolved Problems
 * Indexing Answers to Questions
