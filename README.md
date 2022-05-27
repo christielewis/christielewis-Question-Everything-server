@@ -114,4 +114,10 @@ I tackled bugs in a plethora of ways throughout in the development process. Some
 * Deleting Answers to Questions
 
 #### Setup/Installation
-No server-side setup required!
+If you want a copy of this repository:
+1. Fork and clone it.
+1. Install dependencies with `npm install`.
+1. Ensure that you have `nodemon` installed by running `npm install -g nodemon`.
+1. Ensure the API is functioning properly by running `npm run server`.
+
+If you simply want to use this application, use the [deployed site](https://christielewis.github.io/christielewis-Question-Everything-client/). Just sign-up with an email and password and you are ready to go!
