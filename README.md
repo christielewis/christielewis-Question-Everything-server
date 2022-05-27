@@ -29,8 +29,9 @@ This is an anime Q&A forum. Here, you can ask all anime-related questions, answe
 - User can change their password, once signed in.
 
 - User can Create a new question with:
-  * a Question as the Title.
-  * a brief expansion of the question/ what they want to know (optional)
+  * an anime as the Topic of discussion
+  * a Question as the Title
+  * a brief expansion of the question/ what they want to know
   * a number that represents the current season of the created anime
   * a number that represents the current episode of the created anime
 
